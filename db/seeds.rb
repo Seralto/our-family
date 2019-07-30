@@ -8,3 +8,29 @@ Person.create(
     { first_name: 'Pedro', last_name: 'da Silva Santos', gender: 'male', birthdate: '2015-12-16' }
   ]
 )
+
+Kinship.create(
+  [
+    { name: 'Pai' },
+    { name: 'Mãe' },
+    { name: 'Irmão' },
+    { name: 'Irmã' },
+    { name: 'Conjuge' },
+    { name: 'Filho' },
+    { name: 'Filha' },
+    { name: 'Tio' },
+    { name: 'Tia' },
+    { name: 'Sobrinho' },
+    { name: 'Sobrinha' },
+    { name: 'Primo' },
+    { name: 'Prima' },
+    { name: 'Avô' },
+    { name: 'Avó' },
+    { name: 'Neto' },
+    { name: 'Neta' },
+    { name: 'Bisavô' },
+    { name: 'Bisavó' },
+    { name: 'Bisneto' },
+    { name: 'Bisneta' }
+  ]
+)
