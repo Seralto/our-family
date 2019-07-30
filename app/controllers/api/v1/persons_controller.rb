@@ -4,12 +4,13 @@ module Api
   module V1
     class PersonsController < ApplicationController
       def index
-        @person = Person.all
-        render json: @person
+        @persons = Person.all
+        render json: @persons
       end
 
       def create
         @person = Person.new(person_params)
+
         if person.save
           render json: @person, status: :created
         else
