@@ -6,6 +6,8 @@ class Person < ApplicationRecord
   validates :gender, presence: true
   validates :birthdate, presence: true
 
+  has_many :relationships
+
   enum gender: {
     male: 'Homem',
     female: 'Mulher',
