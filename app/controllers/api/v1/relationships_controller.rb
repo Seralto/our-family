@@ -4,7 +4,7 @@ module Api
   module V1
     class RelationshipsController < ApplicationController
       def index
-        @relationships = Relationship.all
+        @relationships = Relationship.includes(%i[relative_person kinship])
         render json: @relationships
       end
 
