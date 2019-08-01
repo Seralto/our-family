@@ -1,0 +1,28 @@
+$male-blue: #a7d4e6;
+$female-pink: #ebc2df;
+
+.Person {
+  border: solid 3px #c3c3c3;
+  width: 250px;
+  padding: 10px;
+  text-align: center;
+  border-radius: 5px;
+  margin: 0 10px 10px 0;
+  float: left;
+
+  img {
+    width: 50px;
+    margin: 0 6px 6px 0;
+    float: left;
+  }
+}
+
+.male {
+  border-color: darken($male-blue, 10%);
+  background-color: $male-blue
+}
+
+.female {
+  border-color: darken($female-pink, 10%);
+  background-color: $female-pink;
+}
