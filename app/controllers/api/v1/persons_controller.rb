@@ -8,6 +8,11 @@ module Api
         render json: @persons
       end
 
+      def show
+        @person = Person.includes(relationships: %i[relative_person kinship]).find(params[:id])
+        render json: @person
+      end
+
       def create
         @person = Person.new(person_params)
 
