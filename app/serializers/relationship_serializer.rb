@@ -1,5 +1,9 @@
 class RelationshipSerializer < ActiveModel::Serializer
-  attributes :name, :gender, :birthdate, :relationship
+  attributes :id, :name, :gender, :birthdate, :relationship
+
+  def id
+    object.relative_person.id
+  end
 
   def name
     object.relative_person.full_name

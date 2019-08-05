@@ -5,25 +5,25 @@ class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      people: []
+      person: {}
     };
-    this.loadPeople = this.loadPeople.bind(this);
+    this.loadPerson = this.loadPerson.bind(this);
   }
 
-  async loadPeople() {
-    let response = await fetch('api/v1/persons/');
-    const people = await response.json();
-    this.setState({ people: people });
+  async loadPerson() {
+    let response = await fetch('api/v1/persons/1');
+    const person = await response.json();
+    this.setState({ person: person });
   }
 
   componentDidMount() {
-    this.loadPeople();
+    this.loadPerson();
   }
 
   render() {
     return (
       <div>
-        <Person data={this.state.people} />
+        <Person data={this.state.person} />
       </div>
     );
   }

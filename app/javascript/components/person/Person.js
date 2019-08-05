@@ -15,18 +15,35 @@ class Person extends Component {
     return Math.abs(ageDate.getUTCFullYear() - 1970);
   }
 
+  renderRelatives(relatives) {
+    if (!relatives) { return; }
+
+    return (
+      relatives.map((person) => (
+        <div key={person.id} className={"Person " + person.gender}>
+          <img src={this.genderImage(person.gender)} alt="" />
+          {person.name}
+          <br />
+          {this.calculateAge(person.birthdate)} anos
+        </div>
+      ))
+    )
+  }
+
   render() {
+    const person = this.props.data;
+
     return (
       <div>
-        {this.props.data.map((person) => (
-          <div key={person.id} className={"Person " + person.gender}>
-            <img src={this.genderImage(person.gender)} alt="" />
+        <div key={person.id} className={"Person " + person.gender}>
+          <img src={this.genderImage(person.gender)} alt="" />
 
-            {person.full_name}
-            <br />
-            {this.calculateAge(person.birthdate)} anos
-          </div>
-        ))}
+          {person.name}
+          <br />
+          {this.calculateAge(person.birthdate)} anos
+        </div>
+
+        {this.renderRelatives(person.relatives)}
       </div>
     );
   }

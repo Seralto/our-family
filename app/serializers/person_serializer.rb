@@ -1,5 +1,9 @@
 class PersonSerializer < ActiveModel::Serializer
-  attributes :full_name, :gender, :birthdate
+  attributes :id, :name, :gender, :birthdate
 
-  has_many :relationships
+  def name
+    object.full_name
+  end
+
+  has_many :relationships, key: :relatives
 end
